@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes.routes import router
+from app.routes.expense_routes import router
 from app.database import init_db
 
 
