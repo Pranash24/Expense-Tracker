@@ -46,3 +46,30 @@ def delete_expense(db: Session, expense_id: int):
     db.delete(db_expense)
     db.commit()
     return True
+
+def get_filtered_expenses(
+    db: Session,
+    category: str = None,
+    start_date: str = None,
+    end_date: str = None,
+    search: str = None,
+    min_amount: float = None,
+    max_amount: float = None,
+):
+    query = db.query(Expense)
+
+    
+    if category:
+        query = query.filter(Expense.category == category)
+    if start_date:
+        query = query.filter(Expense.date >= start_date)
+    if end_date:
+        query = query.filter(Expense.date <= end_date)
+    if search:
+        query = query.filter(Expense.description.ilike(f"%{search}%"))
+    if min_amount is not None:
+        query = query.filter(Expense.amount >= min_amount)
+    if max_amount is not None:
+        query = query.filter(Expense.amount <= max_amount)
+
+    return query.all()
