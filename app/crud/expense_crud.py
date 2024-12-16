@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from app.models.expense import Expense
-from app.schemas.expense_schemas import ExpenseCreate
+from app.schemas.expense_schemas import ExpenseCreate, ExpenseUpdate
 
 def create_expense(db: Session, expense: ExpenseCreate):
     db_expense = Expense(**expense.dict())
@@ -23,7 +23,7 @@ def get_statistics(db: Session):
 
     return {"total": total, "by_category": by_category}
 
-def update_expense(db: Session, expense_id: int, updated_data: ExpenseCreate):
+def update_expense(db: Session, expense_id: int, updated_data: ExpenseUpdate):
     db_expense = db.query(Expense).filter(Expense.id == expense_id).first()
 
     if not db_expense:
