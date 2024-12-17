@@ -1,5 +1,7 @@
-from pydantic import BaseModel, Field, constr
 from datetime import date
+
+from pydantic import BaseModel, Field, constr
+
 
 class ExpenseBase(BaseModel):
     description: constr(min_length=3, max_length=255)  

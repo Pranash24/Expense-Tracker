@@ -1,8 +1,12 @@
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
-from app.schemas.expense_schemas import ExpenseCreate, ExpenseResponse, ExpenseUpdate
-from app.crud.expense_crud import create_expense, get_expenses, get_statistics, delete_expense, update_expense, get_filtered_expenses
+
+from app.crud.expense_crud import (create_expense, delete_expense,
+                                   get_expenses, get_filtered_expenses,
+                                   get_statistics, update_expense)
 from app.database import get_db
+from app.schemas.expense_schemas import (ExpenseCreate, ExpenseResponse,
+                                         ExpenseUpdate)
 
 router = APIRouter()
 @router.get("/expenses",tags=["CRUD Expenses"])

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from app.routes.expense_routes import router
-from app.database import init_db
 
+from app.database import init_db
+from app.routes.expense_routes import router
 
 app = FastAPI(title="Expense Tracker API")
 

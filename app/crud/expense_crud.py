@@ -1,6 +1,8 @@
 from sqlalchemy.orm import Session
+
 from app.models.expense import Expense
 from app.schemas.expense_schemas import ExpenseCreate, ExpenseUpdate
+
 
 def create_expense(db: Session, expense: ExpenseCreate):
     db_expense = Expense(**expense.dict())
