@@ -1,6 +1,6 @@
 Expense Tracker API
 
-Projectomschrijving: De Expense Tracker API is een backend applicatie gebouwd met FastAPI. Het stelt gebruikers in staat om uitgaven te beheren, inclusief functionaliteiten zoals het toevoegen, bekijken, bijwerken en verwijderen van uitgaven. Daarnaast kunnen gebruikers hun uitgaven filteren per categorie of betaalmethode.
+Projectomschrijving: De Expense Tracker API is een backend applicatie gebouwd met FastAPI. Het stelt gebruikers in staat om uitgaven te beheren, inclusief functionaliteiten zoals het toevoegen, bekijken, bijwerken en verwijderen van uitgaven. Daarnaast kunnen gebruikers hun uitgaven filteren per categorie.
 
 Installatie-instructies:
 
